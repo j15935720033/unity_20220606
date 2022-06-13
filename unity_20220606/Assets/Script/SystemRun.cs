@@ -1,6 +1,6 @@
 
 using UnityEngine;//引用UnityEngine的命名空間
-namespace action
+namespace chia
 {
     /*C# 從藍圖變成實體事件:
         1.場景上的遊戲物件Game Object 灰色方塊
@@ -40,11 +40,23 @@ namespace action
         #endregion
 
         #region  事件:程式入口
+        //喚醒事件:開始事件前執行一次，取得元件等等
+        private void Awake()
+        {
+            //ani 指定 忍者龜身上的 Animator
+            ani = GetComponent<Animator>();//泛型:<Animator>
+        }
         //開始事件:播放遊戲時執行一次
         //初始化設定，例如:英雄聯盟剛開始500元
         private void Start()
         {
             print("哈囉，沃德:D");//MonoBehavier提供
+        }
+        //更新事件:每秒執行約60次，60FPS Frame per second
+        private void Update()
+        {
+           print("<Color=yellow>遊戲更新中</Color>");
+              
         }
         #endregion
     }
