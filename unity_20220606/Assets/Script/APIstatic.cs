@@ -32,6 +32,8 @@ namespace chia
             //取得所有攝影機數量
             int AllCameraNum = Camera.allCameras.Length;
             //取得應用程式的平台
+            string application = Application.platform.ToString();
+
 
             #endregion
         }
