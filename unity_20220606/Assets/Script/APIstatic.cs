@@ -1,4 +1,4 @@
-
+ï»¿
 using UnityEngine;
 namespace chia
 {
@@ -6,66 +6,66 @@ namespace chia
     {
         private void Start()
         {
-            #region ½m²ß
+            #region ç·´ç¿’
             /*
-            //¨ú±oÀRºAÄİ©Ê
-            //»yªk:
-            //Ãş§O.ÀRºAÄİ©Ê¦WºÙ
-            print("ÀH¾÷­È:" + Random.value);
+            //å–å¾—éœæ…‹å±¬æ€§
+            //èªæ³•:
+            //é¡åˆ¥.éœæ…‹å±¬æ€§åç¨±
+            print("éš¨æ©Ÿå€¼:" + Random.value);
             print("PI:" + Mathf.PI);
-            print("µL­­¤j:" + Mathf.Infinity);
+            print("ç„¡é™å¤§:" + Mathf.Infinity);
 
-            //³]©wÀRºAÄİ©Ê set(Read Only ¤£¯à¨Ï¥Î)
-            //»yªk:
-            //Ãş§O.ÀRºAÄİ©Ê¦WºÙ «ü©w ­È
-            Cursor.visible = false;//Cursor:«ü¼Ğ
+            //è¨­å®šéœæ…‹å±¬æ€§ set(Read Only ä¸èƒ½ä½¿ç”¨)
+            //èªæ³•:
+            //é¡åˆ¥.éœæ…‹å±¬æ€§åç¨± æŒ‡å®š å€¼
+            Cursor.visible = false;//Cursor:æŒ‡æ¨™
             Physics2D.gravity = new Vector2(0, -9.8f);
             Time.timeScale = 0f;
-            //Physics2D:2D¦a¤ß¤Ş¤O¡AVector2(X¶b,Y¶b)
+            //Physics2D:2Dåœ°å¿ƒå¼•åŠ›ï¼ŒVector2(Xè»¸,Yè»¸)
             float range = Random.Range(20.5f, 100.5f);
-            print("ÀH¾÷½d³ò" + range);
+            print("éš¨æ©Ÿç¯„åœ" + range);
 
-            int rangeInt = Random.Range(1, 3);//¤£¥]§t3
-            print("ÀH¾÷¾ã¼Æ1~2" + rangeInt);
+            int rangeInt = Random.Range(1, 3);//ä¸åŒ…å«3
+            print("éš¨æ©Ÿæ•´æ•¸1~2" + rangeInt);
             #endregion
             */
             #endregion
 
-            #region C# ÀRºAÄİ©Ê»P¤èªk½m²ß 2022.06.13
-            //¨ú±o©Ò¦³Äá¼v¾÷¼Æ¶q
+            #region C# éœæ…‹å±¬æ€§èˆ‡æ–¹æ³•ç·´ç¿’ 2022.06.13
+            //å–å¾—æ‰€æœ‰æ”å½±æ©Ÿæ•¸é‡
             int AllCameraNum = Camera.allCameras.Length;
-            //¨ú±oÀ³¥Îµ{¦¡ªº¥­¥x
+            //å–å¾—æ‡‰ç”¨ç¨‹å¼çš„å¹³å°
             string application = Application.platform.ToString();
-            //¨ú±o2Dª«²zºÎ¯vÁ{¬É­È³]©w¬° 10
+            //å–å¾—2Dç‰©ç†ç¡çœ è‡¨ç•Œå€¼è¨­å®šç‚º 10
             Physics2D.timeToSleep=10;
-            //®É¶¡¤j¤p³]©w¬° 0.5(ºC°Ê§@)
+            //æ™‚é–“å¤§å°è¨­å®šç‚º 0.5(æ…¢å‹•ä½œ)
             Time.fixedDeltaTime = 0.5f;
-            //¹ï 9.999 ¥h¤p¼ÆÂI (¤£­­¨î¥h°£¤è¦¡)
+            //å° 9.999 å»å°æ•¸é» (ä¸é™åˆ¶å»é™¤æ–¹å¼)
             float f01=Mathf.Floor(9.999f);
-            //¨ú¨ì¤p¼Æ²Ä2¦ì 
+            //å–åˆ°å°æ•¸ç¬¬2ä½ 
             double f02 = System.Math.Round(9.255, 2);
             double f03 = System.Math.Round(9.245, 2);
 
 
-            print("©Ò¦³Äá¼v¾÷¼Æ¶q"+ AllCameraNum);
-            print("À³¥Îµ{¦¡ªº¥­¥x" + application);
-            print("¨ú±o2Dª«²zºÎ¯vÁ{¬É­È" + Physics2D.timeToSleep);
-            print("¹ï 9.999 ¥h¤p¼ÆÂI:" + f01);
-            print("¹ï 9.255 ¨ú¨ì¤p¼Æ²Ä2¦ì :" + f02);//¥|ªÙ¤»¤J¤­¦¨?
-            print("¹ï 9.245 ¨ú¨ì¤p¼Æ²Ä2¦ì :" + f03);//¨ú¨ì²Ä2¦ì¡A²Ä3¦ì¦pªG¬O5¡A·|Åı²Ä2¦ì«KÂù¼Æ
+            print("æ‰€æœ‰æ”å½±æ©Ÿæ•¸é‡"+ AllCameraNum);
+            print("æ‡‰ç”¨ç¨‹å¼çš„å¹³å°" + application);
+            print("å–å¾—2Dç‰©ç†ç¡çœ è‡¨ç•Œå€¼" + Physics2D.timeToSleep);
+            print("å° 9.999 å»å°æ•¸é»:" + f01);
+            print("å° 9.255 å–åˆ°å°æ•¸ç¬¬2ä½ :" + f02);//å››èˆå…­å…¥äº”æˆåŒ
+            print("å° 9.245 å–åˆ°å°æ•¸ç¬¬2ä½ :" + f03);//å–åˆ°ç¬¬2ä½ï¼Œç¬¬3ä½å¦‚æœæ˜¯5ï¼Œæœƒè®“ç¬¬2ä½ä¾¿é›™æ•¸
             #endregion
         }
         private void Update()
         {
-            //¨ú±o¬O§_¿é¤J¥ô·NÁä
+            //å–å¾—æ˜¯å¦è¼¸å…¥ä»»æ„éµ
             //bool getAnyKey =Input.anyKey;
             if (Input.anyKey)
             {
                 print("A key or mouse click has been detected");
             }
-            //¨ú±o¹CÀ¸¸g¹L®É¶¡
+            //å–å¾—éŠæˆ²ç¶“éæ™‚é–“
             float GameTime=Time.time;
-            //print("<Color=yellow >¹CÀ¸®É¶¡:</Color >"+ GameTime);
+            //print("<Color=yellow >éŠæˆ²æ™‚é–“:</Color >"+ GameTime);
            
            
         }
