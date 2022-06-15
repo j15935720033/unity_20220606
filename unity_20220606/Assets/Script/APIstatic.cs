@@ -40,14 +40,19 @@ namespace chia
             Physics2D.timeToSleep=10;
             //時間大小設定為 0.5(慢動作)
             Time.fixedDeltaTime = 0.5f;
-
-
-
+            //對 9.999 去小數點 (不限制去除方式)
+            float f01=Mathf.Floor(9.999f);
+            //取到小數第2位 
+            double f02 = System.Math.Round(9.255, 2);
+            double f03 = System.Math.Round(9.245, 2);
 
 
             print("所有攝影機數量"+ AllCameraNum);
             print("應用程式的平台" + application);
             print("取得2D物理睡眠臨界值" + Physics2D.timeToSleep);
+            print("對 9.999 去小數點:" + f01);
+            print("對 9.255 取到小數第2位 :" + f02);
+            print("對 9.245 取到小數第2位 :" + f03);
             #endregion
         }
         private void Update()
