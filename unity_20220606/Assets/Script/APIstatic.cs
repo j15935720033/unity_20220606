@@ -51,8 +51,8 @@ namespace chia
             print("應用程式的平台" + application);
             print("取得2D物理睡眠臨界值" + Physics2D.timeToSleep);
             print("對 9.999 去小數點:" + f01);
-            print("對 9.255 取到小數第2位 :" + f02);
-            print("對 9.245 取到小數第2位 :" + f03);
+            print("對 9.255 取到小數第2位 :" + f02);//四舍六入五成?
+            print("對 9.245 取到小數第2位 :" + f03);//取到第2位，第3位如果是5，會讓第2位便雙數
             #endregion
         }
         private void Update()
