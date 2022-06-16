@@ -1,4 +1,4 @@
-﻿
+﻿using System;
 using UnityEngine;
 namespace chia
 {
@@ -34,7 +34,7 @@ namespace chia
             #region C# 靜態屬性與方法練習 2022.06.13
             //取得所有攝影機數量
             int AllCameraNum = Camera.allCameras.Length;
-            //取得應用程式的平台
+            //取得應用程式的平台s
             string application = Application.platform.ToString();
             //取得2D物理睡眠臨界值設定為 10
             Physics2D.timeToSleep=10;
@@ -45,18 +45,27 @@ namespace chia
             //取到小數第2位 
             double f02 = System.Math.Round(9.255, 2);
             double f03 = System.Math.Round(9.245, 2);
-
-
+            //取得兩點的距離 new Vector3(1, 1, 1) new Vector3(22, 22, 22)
+            Vector3 v1 = new Vector3(1,1,1);
+            Vector3 v2 = new Vector3(22,22,22);
+            float distance_ab=Vector3.Distance(v1, v2);
+            //開啟連結 https://unity.com/
+            Application.OpenURL("https://unity.com/");//Access to application run-time data.
+            
             print("所有攝影機數量"+ AllCameraNum);
             print("應用程式的平台" + application);
             print("取得2D物理睡眠臨界值" + Physics2D.timeToSleep);
             print("對 9.999 去小數點:" + f01);
             print("對 9.255 取到小數第2位 :" + f02);//四舍六入五成双
             print("對 9.245 取到小數第2位 :" + f03);//取到第2位，第3位如果是5，會讓第2位便雙數
+            print($"Vector3(1, 1, 1)和Vector3(22, 22, 22)距離:{distance_ab}");
             #endregion
         }
         private void Update()
         {
+            #region C# 靜態屬性與方法練習 2022.06.13
+
+
             //取得是否輸入任意鍵
             //bool getAnyKey =Input.anyKey;
             if (Input.anyKey)
@@ -66,9 +75,19 @@ namespace chia
             //取得遊戲經過時間
             float GameTime=Time.time;
             //print("<Color=yellow >遊戲時間:</Color >"+ GameTime);
-           
-           
+
+            //是否按下按鍵 (指定為空白鍵)
+            if (Input.GetKey(KeyCode.Space))
+            {
+                print("按下空白鍵");
+            }
+            else
+            {
+                print("不是按下空白鍵");
+            }
+
+            #endregion
         }
-        
+
     }
 }
