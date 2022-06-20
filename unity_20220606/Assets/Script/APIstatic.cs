@@ -36,10 +36,14 @@ namespace chia
             int AllCameraNum = Camera.allCameras.Length;
             //取得應用程式的平台
             string application = Application.platform.ToString();
-            //取得2D物理睡眠臨界值設定為 10
-            Physics2D.timeToSleep = 10;
+            //取得3D物理睡眠臨界值設定為 10
+            Physics.sleepThreshold = 10;
+            print("3D睡眠臨界值" + Physics.sleepThreshold);
+
             //時間大小設定為 0.5(慢動作)
-            Time.fixedDeltaTime = 0.5f;
+            //Time.fixedDeltaTime = 0.5f;//錯
+            Time.timeScale = 0.5f;
+            print("時間大小" + Time.timeScale);
             //對 9.999 去小數點 (不限制去除方式)
             float f01 = Mathf.Floor(9.999f);
             //取到小數第2位 
@@ -49,23 +53,22 @@ namespace chia
 
             print("所有攝影機數量" + AllCameraNum);
             print("應用程式的平台" + application);
-            print("取得2D物理睡眠臨界值" + Physics2D.timeToSleep);
             print("對 9.999 去小數點:" + f01);
             print("對 9.255 取到小數第2位 :" + f02);//四舍六入五成双
             print("對 9.245 取到小數第2位 :" + f03);//取到第2位，第3位如果是5，會讓第2位便雙數
+            //開啟連結
+            Application.OpenURL("https://unity.com/");
             #endregion
         }
         private void Update()
         {
             #region
-            //取得是否輸入任意鍵
-            if (Input.anyKey)
-            {
-                print("A key or mouse click has been detected");
-            }
-            //取得遊戲經過時間
-            float GameTime = Time.time;
-            //print("<Color=yellow >遊戲時間:</Color >"+ GameTime);
+
+            //print("是否輸入任意鍵" + Input.anyKey);
+            print("是否按下任意鍵" + Input.anyKeyDown);
+            print("<color=yellow>遊戲總時間GameTime:</color>" +Time.time);
+            print("<color=yellow>遊戲每個場景開始時間timeSinceLevelLoad:</color>" + Time.timeSinceLevelLoad);
+            print("<color=red>是否按下空白鍵:"+Input.GetKeyDown(KeyCode.Space)+ "</color>");
             #endregion
 
 
