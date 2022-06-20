@@ -4,6 +4,8 @@ namespace chia
 {
     public class APIstatic : MonoBehaviour
     {
+        private Vector3 a = new Vector3(1,1,1);
+        private Vector3 b = new Vector3(22,22,22);
         private void Start()
         {
             #region 練習
@@ -33,9 +35,14 @@ namespace chia
 
             #region C# 靜態屬性與方法練習 2022.06.13
             //取得所有攝影機數量
-            int AllCameraNum = Camera.allCameras.Length;
+            //int AllCameraNum = Camera.allCameras.Length;
+            //print("所有攝影機數量" + AllCameraNum);
+            print("所有攝影機數量" + Camera.allCamerasCount);
+            
             //取得應用程式的平台
             string application = Application.platform.ToString();
+            print("應用程式的平台" + application);
+
             //取得3D物理睡眠臨界值設定為 10
             Physics.sleepThreshold = 10;
             print("3D睡眠臨界值" + Physics.sleepThreshold);
@@ -44,18 +51,20 @@ namespace chia
             //Time.fixedDeltaTime = 0.5f;//錯
             Time.timeScale = 0.5f;
             print("時間大小" + Time.timeScale);
+
             //對 9.999 去小數點 (不限制去除方式)
             float f01 = Mathf.Floor(9.999f);
             //取到小數第2位 
             double f02 = System.Math.Round(9.255, 2);
             double f03 = System.Math.Round(9.245, 2);
-
-
-            print("所有攝影機數量" + AllCameraNum);
-            print("應用程式的平台" + application);
+            
             print("對 9.999 去小數點:" + f01);
             print("對 9.255 取到小數第2位 :" + f02);//四舍六入五成双
             print("對 9.245 取到小數第2位 :" + f03);//取到第2位，第3位如果是5，會讓第2位便雙數
+
+            //取得兩點的距離new Vector3(1, 1, 1) new Vector3(22, 22, 22)
+            float distance = Vector3.Distance(a, b);
+            print("取得兩點的距離" + distance);
             //開啟連結
             Application.OpenURL("https://unity.com/");
             #endregion
