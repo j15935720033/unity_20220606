@@ -28,15 +28,28 @@ namespace chia
         //Tooltip:提示(可用中文)
         //Range:範圍 (僅限於數值類型資料，int float byte long)
         [SerializeField,Header("跑步速度"),Tooltip("這是角色的跑步速度"),Range(0,100)]
-        private float speedRun = 3.5f;
+        private float speedRun = 1000f;
+        /*
         [SerializeField, Header("跳躍高度"), Tooltip("這是角色的跑步高度"), Range(0, 3000)]
         private float heightJump = 350;
+        */
         private Animator ani;
         private Rigidbody2D rig;
         #endregion
 
         #region  功能:實作該系統的複雜方法
+        //方法 Method
+        //語法
+        //修飾詞 傳回資料型態 方法名稱(參數){程式}
 
+        /// <summary>
+        /// 跑步功能
+        /// </summary>
+        private void Run()
+        {
+            print("跑步中");
+            rig.velocity = new Vector2(speedRun,rig.velocity.y);//設定加速度，rig.velocity.y-->rig中原本y軸的加速度
+        }
         #endregion
 
         #region  事件:程式入口
@@ -45,18 +58,19 @@ namespace chia
         {
             //ani 指定 忍者龜身上的 Animator
             ani = GetComponent<Animator>();//泛型:<Animator>
+            rig = GetComponent<Rigidbody2D>();
         }
         //開始事件:播放遊戲時執行一次
         //初始化設定，例如:英雄聯盟剛開始500元
         private void Start()
         {
-            print("哈囉，沃德:D");//MonoBehavier提供
+            //print("哈囉，沃德:D");//MonoBehavier提供
         }
         //更新事件:每秒執行約60次，60FPS Frame per second
         private void Update()
         {
            print("<Color=yellow>遊戲更新中</Color>");
-              
+            Run();
         }
         #endregion
     }
