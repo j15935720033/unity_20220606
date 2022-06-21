@@ -42,6 +42,6 @@ public class APNONstatic0620 : MonoBehaviour
     {
         //讓立方體看著球體旋轉
         Transform_Sphere = Sphere.GetComponent<Transform>();
-        Transform_Sphere.
+        Transform_Sphere.Rotate(0,0,3.5f);
 }
 }

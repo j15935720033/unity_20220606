@@ -42,8 +42,8 @@ namespace chia
         }
         private void Update()
         {
-            StartPoint.Translate(1.5f,0,0);
-            //StartPoint.Rotate(0, 0, 3.5f);
+            StartPoint.Translate(1.5f,0,0);//²¾°Ê
+            StartPoint.Rotate(0, 0, 3.5f);//±ÛÂà
         }
     }
 }

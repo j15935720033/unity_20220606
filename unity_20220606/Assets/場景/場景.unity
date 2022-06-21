@@ -491,7 +491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77a6fb49457c43e4e9fcf3789e6d3089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedRun: 3.5
+  speedRun: 1000
 --- !u!114 &278890513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -504,7 +504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 461c33848885d954887cdf048b0e2ba1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heightJump: 500
+  heightJump: 350
 --- !u!1 &781680807
 GameObject:
   m_ObjectHideFlags: 0
@@ -610,7 +610,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 3.826484, y: 1}
+    m_SensorSize: {x: 7.9626865, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
