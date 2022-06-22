@@ -10,11 +10,19 @@ public class APNONstatic0620 : MonoBehaviour
     private GameObject Sphere;
     [SerializeField]
     private GameObject Capsule;
+    [SerializeField]
+    private GameObject Cube;
 
     private SphereCollider SphereCollider;
+    private Vector3 scaleChange;
+
     private Transform Transform_Capsule;
     private Transform Transform_Sphere;
-    private Vector3 scaleChange;
+    private Transform Transform_Cube;
+
+    private Rigidbody Rigidbody3D_Capsule;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +50,13 @@ public class APNONstatic0620 : MonoBehaviour
     {
         //讓立方體看著球體旋轉
         Transform_Sphere = Sphere.GetComponent<Transform>();
-        Transform_Sphere.Rotate(0, 0, 3.5f);
+        Transform_Cube = Cube.GetComponent<Transform>();
+        Transform_Sphere.Rotate(0, 0, 6f);//球體旋轉
+        Transform_Sphere.Translate(0.5f, 0, 0); 
+        Transform_Cube.LookAt(Transform_Sphere);
+        //讓膠囊體往上產生推力
+        Rigidbody3D_Capsule = Capsule.GetComponent<Rigidbody>();
+        Vector3 vector3 = new Vector3(0,5,0);
+        Rigidbody3D_Capsule.AddForce(vector3);
     }
 }
