@@ -19,7 +19,7 @@ public class APNONstatic0620 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
         //取得攝影機深度 (Depth)
         print($"取得攝影機深度:{camera.depth}");
         //取得球體碰撞器半徑
@@ -30,11 +30,11 @@ public class APNONstatic0620 : MonoBehaviour
         float r = Random.Range(0f, 1f);
         float g = Random.Range(0f, 1f);
         float b = Random.Range(0f, 1f);
-        camera.backgroundColor=new Color(r,g,b);
+        camera.backgroundColor = new Color(r, g, b);
         //存放膠囊體尺寸改為 3, 2, 1   https://docs.unity3d.com/ScriptReference/Transform-localScale.html
         Transform_Capsule = Capsule.GetComponent<Transform>();
         scaleChange = new Vector3(3f, 2f, 1f);
-        Transform_Capsule.localScale= scaleChange;
+        Transform_Capsule.localScale = scaleChange;
     }
 
     // Update is called once per frame
@@ -42,6 +42,6 @@ public class APNONstatic0620 : MonoBehaviour
     {
         //讓立方體看著球體旋轉
         Transform_Sphere = Sphere.GetComponent<Transform>();
-        Transform_Sphere.Rotate(0,0,3.5f);
-}
+        Transform_Sphere.Rotate(0, 0, 3.5f);
+    }
 }
