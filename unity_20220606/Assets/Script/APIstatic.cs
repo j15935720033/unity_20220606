@@ -66,18 +66,18 @@ namespace chia
             float distance = Vector3.Distance(a, b);
             print("取得兩點的距離" + distance);
             //開啟連結
-            Application.OpenURL("https://unity.com/");
+            //Application.OpenURL("https://unity.com/");
             #endregion
         }
         private void Update()
         {
             #region
-
-            //print("是否輸入任意鍵" + Input.anyKey);
-            print("是否按下任意鍵" + Input.anyKeyDown);
-            print("<color=yellow>遊戲總時間GameTime:</color>" +Time.time);
-            print("<color=yellow>遊戲每個場景開始時間timeSinceLevelLoad:</color>" + Time.timeSinceLevelLoad);
-            print("<color=red>是否按下空白鍵:"+Input.GetKeyDown(KeyCode.Space)+ "</color>");
+            print($"<color=yellow>Input.GetAxis:{Input.GetAxis("Horizontal")}</color>"); ;
+            
+            //print("是否按下任意鍵" + Input.anyKeyDown);
+            //print("<color=yellow>遊戲總時間GameTime:</color>" +Time.time);
+            //print("<color=yellow>遊戲每個場景開始時間timeSinceLevelLoad:</color>" + Time.timeSinceLevelLoad);
+            //print("<color=red>是否按下空白鍵:"+Input.GetKeyDown(KeyCode.Space)+ "</color>");
             #endregion
 
 

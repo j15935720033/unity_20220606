@@ -381,7 +381,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 3.1857924, y: 1}
+    m_SensorSize: {x: 3.152815, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -416,6 +416,7 @@ GameObject:
   m_Component:
   - component: {fileID: 735316205}
   - component: {fileID: 735316204}
+  - component: {fileID: 735316206}
   m_Layer: 0
   m_Name: API
   m_TagString: Untagged
@@ -430,7 +431,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 735316203}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ccd0c90e1a551544e9758ee0ca99a209, type: 3}
   m_Name: 
@@ -454,6 +455,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &735316206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735316203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c793d7165d94854f8385955e8622e12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &764461214
 GameObject:
   m_ObjectHideFlags: 0
