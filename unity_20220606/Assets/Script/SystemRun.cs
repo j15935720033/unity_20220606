@@ -48,7 +48,7 @@ namespace chia
         private void Run()
         {
             print("跑步中");
-            rig.velocity = new Vector2(speedRun,rig.velocity.y);//設定加速度，rig.velocity.y-->rig中原本y軸的加速度
+           // rig.velocity = new Vector2(speedRun,rig.velocity.y);//設定加速度，rig.velocity.y-->rig中原本y軸的加速度
         }
         #endregion
 
