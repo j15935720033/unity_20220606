@@ -133,7 +133,6 @@ GameObject:
   m_Component:
   - component: {fileID: 194363995}
   - component: {fileID: 194363996}
-  - component: {fileID: 194363997}
   m_Layer: 0
   m_Name: Blue
   m_TagString: Untagged
@@ -208,26 +207,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &194363997
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 194363994}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 96d62e4e59f5c1849bee339f16661662, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &203209346
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,7 +536,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 781680807}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71f17d47d23c5a84c8a3017594ef5d3d, type: 3}
   m_Name: 
@@ -603,14 +582,18 @@ MonoBehaviour:
   m_Follow: {fileID: 278890507}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 7.12
+    OrthographicSize: 14.97
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
+<<<<<<< HEAD
     m_SensorSize: {x: 4.172161, y: 1}
+=======
+    m_SensorSize: {x: 3.150134, y: 1}
+>>>>>>> e35c15e3af11f78f540169247d1288b10e68c6dd
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -8034,7 +8017,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.12
+  orthographic size: 14.97
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

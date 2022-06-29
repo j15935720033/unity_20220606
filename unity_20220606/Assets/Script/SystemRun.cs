@@ -58,7 +58,7 @@ namespace chia
         {
             //ani 指定 忍者龜身上的 Animator
             ani = GetComponent<Animator>();//泛型:<Animator>
-            rig = GetComponent<Rigidbody2D>();
+            rig = ani.GetComponent<Rigidbody2D>();
         }
         //開始事件:播放遊戲時執行一次
         //初始化設定，例如:英雄聯盟剛開始500元
