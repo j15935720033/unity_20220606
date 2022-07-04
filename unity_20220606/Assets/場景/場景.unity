@@ -890,9 +890,7 @@ MonoBehaviour:
   v3VheckGroundSize: {x: 3.4, y: 0.27, z: 1}
   v3VheckGroundoffset: {x: 0.16, y: -2.74, z: 0}
   colorCheckGround: {r: 1, g: 0, b: 0.2, a: 0.5}
-  layerCheckGround:
-    serializedVersion: 2
-    m_Bits: 8
+  ani: {fileID: 0}
 --- !u!1 &458572433
 GameObject:
   m_ObjectHideFlags: 0
@@ -1282,7 +1280,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.4609375, y: 1}
+    m_SensorSize: {x: 3.474531, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1521,6 +1519,7 @@ GameObject:
   - component: {fileID: 1822660595}
   - component: {fileID: 1822660594}
   - component: {fileID: 1822660593}
+  - component: {fileID: 1822660596}
   m_Layer: 3
   m_Name: Tilemap
   m_TagString: Untagged
@@ -8659,6 +8658,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1822660596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1822660589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 461c33848885d954887cdf048b0e2ba1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heightJump: 350
+  v3VheckGroundSize: {x: 3.4, y: 0.27, z: 1}
+  v3VheckGroundoffset: {x: 0.16, y: -2.74, z: 0}
+  colorCheckGround: {r: 1, g: 0, b: 0.2, a: 0.5}
+  ani: {fileID: 0}
 --- !u!1 &1919699737
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,7 +11,7 @@ public class ManagerPass : MonoBehaviour
     [SerializeField, Header("跑步系統")]
     private chia.SystemRun run;
     [SerializeField, Header("跳躍系統")]
-    private SystemJump jump;
+    private chia.SystemJump jump;
     [SerializeField, Header("結束管理器")]
     private chia.ManageFinal manageFinal;
 
