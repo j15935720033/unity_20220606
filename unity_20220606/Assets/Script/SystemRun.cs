@@ -1,76 +1,112 @@
-
-using UnityEngine;//¤Ş¥ÎUnityEngineªº©R¦WªÅ¶¡
+ï»¿
+using UnityEngine;//å¼•ç”¨UnityEngineçš„å‘½åç©ºé–“
 namespace chia
 {
-    /*C# ±qÂÅ¹ÏÅÜ¦¨¹êÅé¨Æ¥ó:
-        1.³õ´º¤Wªº¹CÀ¸ª«¥óGame Object ¦Ç¦â¤è¶ô
-        2.±N¦¹¸}¥»±¾¦b¸Óª«¥óÅÜ¦¨¤¸¥ó
+    /*C# å¾è—åœ–è®Šæˆå¯¦é«”äº‹ä»¶:
+        1.å ´æ™¯ä¸Šçš„éŠæˆ²ç‰©ä»¶Game Object ç°è‰²æ–¹å¡Š
+        2.å°‡æ­¤è…³æœ¬æ›åœ¨è©²ç‰©ä»¶è®Šæˆå…ƒä»¶
      */
     /// <summary>
-    /// ¶]¨B¨t²Î
+    /// è·‘æ­¥ç³»çµ±
     /// </summary>
     public class SystemRun : MonoBehaviour
     {
 
 
-        #region  ¸ê®Æ:«O¦s¨t²Î»İ­nªº¸ê®Æ
-        //Äæ¦ì Field:«O¦s¸ê®Æ
-        //»yªk:
-        //­×¹¢µü Äæ¦ì¸ê®ÆÃş«¬ Äæ¦ì¦Û­q¦WºÙ («ü©w ¹w³]­È)
+        #region  è³‡æ–™:ä¿å­˜ç³»çµ±éœ€è¦çš„è³‡æ–™
+        //æ¬„ä½ Field:ä¿å­˜è³‡æ–™
+        //èªæ³•:
+        //ä¿®é£¾è© æ¬„ä½è³‡æ–™é¡å‹ æ¬„ä½è‡ªè¨‚åç¨± (æŒ‡å®š é è¨­å€¼)
 
-        //­×¹¢µü
-        //¤½¶}:Åã¥Ü¦b­±ªO¡A¤¹³\¨ä¥LÃş§O¦s¨ú public
-        //¨p¤H:¤£Åã¥Ü¦b­±ªO¡A¤£¤¹³\¨ä¥LÃş§O¦s¨ú private(«Ê¸Ë)
+        //ä¿®é£¾è©
+        //å…¬é–‹:é¡¯ç¤ºåœ¨é¢æ¿ï¼Œå…è¨±å…¶ä»–é¡åˆ¥å­˜å– public
+        //ç§äºº:ä¸é¡¯ç¤ºåœ¨é¢æ¿ï¼Œä¸å…è¨±å…¶ä»–é¡åˆ¥å­˜å– private(å°è£)
 
-        //[] Attritube Äİ©Ê¡AÃB¥~¥\¯à
-        //serialize Field:§Ç¦C¤ÆÄæ¦ì¡A±N¨p¤HÄæ¦ìÅã¥Ü¦bunity Hub
-        //Header:¼ĞÃD(¥i¥Î¤¤¤å)
-        //Tooltip:´£¥Ü(¥i¥Î¤¤¤å)
-        //Range:½d³ò (¶È­­©ó¼Æ­ÈÃş«¬¸ê®Æ¡Aint float byte long)
-        [SerializeField,Header("¶]¨B³t«×"),Tooltip("³o¬O¨¤¦âªº¶]¨B³t«×"),Range(0,100)]
-        private float speedRun = 1000f;
+        //[] Attritube å±¬æ€§ï¼Œé¡å¤–åŠŸèƒ½
+        //serialize Field:åºåˆ—åŒ–æ¬„ä½ï¼Œå°‡ç§äººæ¬„ä½é¡¯ç¤ºåœ¨unity Hub
+        //Header:æ¨™é¡Œ(å¯ç”¨ä¸­æ–‡)
+        //Tooltip:æç¤º(å¯ç”¨ä¸­æ–‡)
+        //Range:ç¯„åœ (åƒ…é™æ–¼æ•¸å€¼é¡å‹è³‡æ–™ï¼Œint float byte long)
+        [SerializeField,Header("è·‘æ­¥é€Ÿåº¦"),Tooltip("é€™æ˜¯è§’è‰²çš„è·‘æ­¥é€Ÿåº¦"),Range(0,100)]
+        private float speedRun = 10f;
+        [SerializeField]
+        private float speed = 10;
         /*
-        [SerializeField, Header("¸õÅD°ª«×"), Tooltip("³o¬O¨¤¦âªº¶]¨B°ª«×"), Range(0, 3000)]
+        [SerializeField, Header("è·³èºé«˜åº¦"), Tooltip("é€™æ˜¯è§’è‰²çš„è·‘æ­¥é«˜åº¦"), Range(0, 3000)]
         private float heightJump = 350;
         */
         private Animator ani;
         private Rigidbody2D rig;
+        private Transform trans;
         #endregion
 
-        #region  ¥\¯à:¹ê§@¸Ó¨t²Îªº½ÆÂø¤èªk
-        //¤èªk Method
-        //»yªk
-        //­×¹¢µü ¶Ç¦^¸ê®Æ«¬ºA ¤èªk¦WºÙ(°Ñ¼Æ){µ{¦¡}
+        #region  åŠŸèƒ½:å¯¦ä½œè©²ç³»çµ±çš„è¤‡é›œæ–¹æ³•
+        //æ–¹æ³• Method
+        //èªæ³•
+        //ä¿®é£¾è© å‚³å›è³‡æ–™å‹æ…‹ æ–¹æ³•åç¨±(åƒæ•¸){ç¨‹å¼}
 
         /// <summary>
-        /// ¶]¨B¥\¯à
+        /// è·‘æ­¥åŠŸèƒ½
         /// </summary>
         private void Run()
         {
-            print("¶]¨B¤¤");
-           // rig.velocity = new Vector2(speedRun,rig.velocity.y);//³]©w¥[³t«×¡Arig.velocity.y-->rig¤¤­ì¥»y¶bªº¥[³t«×
+            print("è·‘æ­¥ä¸­");
+            rig.velocity = new Vector2(speedRun,rig.velocity.y);//è¨­å®šåŠ é€Ÿåº¦ï¼Œrig.velocity.y-->rigä¸­åŸæœ¬yè»¸çš„åŠ é€Ÿåº¦
+        }
+
+        void run2()
+        {
+            //****************æ¡ˆå·¦å³å¥*******************//
+            //float Horizontal_speed = Input.GetAxis("Horizontal");//-1~1
+            float Horizontal_speed = Input.GetAxisRaw("Horizontal");//-1ã€0ã€1
+
+            //****************äººç‰©åŠ é€Ÿåº¦*******************//
+            //rig.velocity = new Vector2(Horizontal_speed * speed * Time.deltaTime, rig.velocity.y);
+            rig.velocity = new Vector2(Horizontal_speed * speed * Time.deltaTime, rig.velocity.y);
+            //****************äººç‰©è½‰å‘*******************//
+            if (Horizontal_speed > 0)
+            {
+                trans.localScale = new Vector2(1f, trans.localScale.y);//å‘å·¦æ”¹å˜å›¾åƒæœå‘å·¦
+            }
+            else if (Horizontal_speed < 0)
+            {
+                trans.localScale = new Vector2(-1f, trans.localScale.y);//å‘å·¦æ”¹å˜å›¾åƒæœå‘å·¦
+            }
         }
         #endregion
 
-        #region  ¨Æ¥ó:µ{¦¡¤J¤f
-        //³ê¿ô¨Æ¥ó:¶}©l¨Æ¥ó«e°õ¦æ¤@¦¸¡A¨ú±o¤¸¥óµ¥µ¥
+        #region  äº‹ä»¶:ç¨‹å¼å…¥å£
+        //å–šé†’äº‹ä»¶:é–‹å§‹äº‹ä»¶å‰åŸ·è¡Œä¸€æ¬¡ï¼Œå–å¾—å…ƒä»¶ç­‰ç­‰
         private void Awake()
         {
-            //ani «ü©w §ÔªÌÀt¨­¤Wªº Animator
-            ani = GetComponent<Animator>();//ªx«¬:<Animator>
+            //ani æŒ‡å®š å¿è€…é¾œèº«ä¸Šçš„ Animator
+            ani = GetComponent<Animator>();//æ³›å‹:<Animator>
             rig = ani.GetComponent<Rigidbody2D>();
+            trans= ani.GetComponent<Transform>();
         }
-        //¶}©l¨Æ¥ó:¼½©ñ¹CÀ¸®É°õ¦æ¤@¦¸
-        //ªì©l¤Æ³]©w¡A¨Ò¦p:­^¶¯Áp·ù­è¶}©l500¤¸
+        //é–‹å§‹äº‹ä»¶:æ’­æ”¾éŠæˆ²æ™‚åŸ·è¡Œä¸€æ¬¡
+        //åˆå§‹åŒ–è¨­å®šï¼Œä¾‹å¦‚:è‹±é›„è¯ç›Ÿå‰›é–‹å§‹500å…ƒ
         private void Start()
         {
-            //print("«¢Åo¡A¨U¼w:D");//MonoBehavier´£¨Ñ
+            //print("å“ˆå›‰ï¼Œæ²ƒå¾·:D");//MonoBehavieræä¾›
         }
-        //§ó·s¨Æ¥ó:¨C¬í°õ¦æ¬ù60¦¸¡A60FPS Frame per second
+        //æ›´æ–°äº‹ä»¶:æ¯ç§’åŸ·è¡Œç´„60æ¬¡ï¼Œ60FPS Frame per second
         private void Update()
         {
-           print("<Color=yellow>¹CÀ¸§ó·s¤¤</Color>");
-            Run();
+           print("<Color=yellow>éŠæˆ²æ›´æ–°ä¸­</Color>");
+            //Run();
+            run2();
+        }
+        //æ­¤å…ƒä»¶è¢«å‹¾é¸ä¸€æ¬¡åŸ·è¡Œä¸€æ¬¡
+        private void OnEnable()
+        {
+            
+        }
+        //æ­¤å…ƒä»¶è¢«å–æ¶ˆå‹¾é¸ä¸€æ¬¡åŸ·è¡Œä¸€æ¬¡
+        private void OnDisable()
+        {
+            //åŠ é€Ÿåº¦æ­¸é›¶
+            rig.velocity = Vector3.zero;
         }
         #endregion
     }
