@@ -17,12 +17,16 @@ namespace chia
         [SerializeField, Header("檢查地板顏色")]
         private Color colorCheckGround = new Color(1, 0, 0.2f, 0.5f);
         [SerializeField, Header("檢查地板圖層")]
-
+        private LayerMask layerCheckGround;
+        [SerializeField, Header("跳躍動畫參數")]
+        private string nameJump = "開關跳躍";
+        [SerializeField, Header("跳躍音效")]
+        private AudioClip soundJump;//音樂片段WAV
 
         private Animator ani;
         private Rigidbody2D rig;
-        private LayerMask layerCheckGround;
-        private GameObject tilemap;
+        private AudioSource aud;//播音樂
+        //private GameObject tilemap;
 
 
         private int layer;
@@ -36,11 +40,12 @@ namespace chia
         {
             ani = GetComponent<Animator>();
             rig = GetComponent<Rigidbody2D>();
-            tilemap = GameObject.Find("Tilemap");//取得tilemap
-            layer = LayerMask.NameToLayer("地板");//取得MaskLayer "地板"
+            aud = GetComponent<AudioSource>();
+            //tilemap = GameObject.Find("Tilemap");//取得tilemap
+            //layer = LayerMask.NameToLayer("地板");//取得MaskLayer "地板"
 
 
-            tilemap.layer = LayerMask.NameToLayer("地板");
+            //tilemap.layer = LayerMask.NameToLayer("地板");
         }
         void Start()
         {
@@ -52,6 +57,7 @@ namespace chia
         {
             JummKey();
             CheckGround();
+            UpdateAnimator();
         }
         //一秒固定50次
         private void FixedUpdate()
@@ -91,6 +97,8 @@ namespace chia
             {
                 rig.AddForce(new Vector2(0, heightJump));
                 clickJump = false;
+                //音效來源，播放一次音效(音效片段,音量)
+                aud.PlayOneShot(soundJump,Random.Range(0.7f,1.5f));
             }
 
         }
@@ -100,10 +108,10 @@ namespace chia
         private void CheckGround()
         {
             //2D碰撞器=物理.富改型區域(中心點,尺寸,角度,圖層)
-            //Collider2D hit = Physics2D.OverlapBox(transform.position + v3VheckGroundoffset, v3VheckGroundSize,0, layerCheckGround);
-            Collider2D hit = Physics2D.OverlapBox(transform.position + v3VheckGroundoffset, v3VheckGroundSize, 0, layer);
+            Collider2D hit = Physics2D.OverlapBox(transform.position + v3VheckGroundoffset, v3VheckGroundSize,0, layerCheckGround);
+            //Collider2D hit = Physics2D.OverlapBox(transform.position + v3VheckGroundoffset, v3VheckGroundSize, 0, layer);
 
-            //print("碰到的物件:" + hit.name);
+           // print("碰到的物件:" + hit.name);
             //print("hit:" + hit);
 
             isGround = hit;//有東西就是true
@@ -115,6 +123,10 @@ namespace chia
             {
                 isGround = false;
             }*/
+        }
+        private void UpdateAnimator()
+        {
+            ani.SetBool(nameJump,!isGround);
         }
         #endregion
 
