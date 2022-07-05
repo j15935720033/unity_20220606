@@ -1567,6 +1567,7 @@ GameObject:
   - component: {fileID: 781680808}
   - component: {fileID: 781680809}
   - component: {fileID: 781680810}
+  - component: {fileID: 781680811}
   m_Layer: 0
   m_Name: APIpratice
   m_TagString: Untagged
@@ -1615,6 +1616,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turtle: {fileID: 278890504}
   StartPoint: {fileID: 203209349}
+--- !u!114 &781680811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781680807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccd0c90e1a551544e9758ee0ca99a209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 1919699739}
+  Sphere: {fileID: 0}
+  Capsule: {fileID: 0}
+  Cube: {fileID: 0}
 --- !u!1 &890521353
 GameObject:
   m_ObjectHideFlags: 0
@@ -1796,7 +1813,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.4609375, y: 1}
+    m_SensorSize: {x: 2.8793566, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
