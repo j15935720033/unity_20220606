@@ -52,14 +52,14 @@ namespace chia
 
             //print(LayerMask.NameToLayer("地板"));
         }
-        //一秒約60次
+        //一秒約60次，會因會電腦效能而不同
         void Update()
         {
             JummKey();
             CheckGround();
             UpdateAnimator();
         }
-        //一秒固定50次
+        //一秒固定50次，固定時間執行，放物理狀態
         private void FixedUpdate()
         {
             JumpForce();
@@ -76,7 +76,7 @@ namespace chia
         }
         #endregion
         #region  功能
-        //如果玩家按下空白鍵就往上跳躍
+        //如果玩家按下空白鍵就往上跳躍，放在update中
         private void JummKey()
         {
             print("Jumpkey");
@@ -90,7 +90,7 @@ namespace chia
                 clickJump = false;
             }
         }
-        //clickJump=true時給向上的力量
+        //clickJump=true時給向上的力量，放在fixupdate
         private void JumpForce()
         {
             if (clickJump && isGround)

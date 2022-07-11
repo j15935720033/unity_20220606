@@ -20,7 +20,7 @@ public class ManagerPass : MonoBehaviour
     //2個物件碰撞執行一次
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print(collision.name);
+        print("碰到物體"+collision.name);
         if (collision.name.Contains(nameTarget))//碰撞名包含nameTarget
         {
             run.enabled = false;//關閉跑步系統

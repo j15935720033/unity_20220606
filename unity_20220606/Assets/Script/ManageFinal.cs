@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;//控制畫布
+using TMPro;//控制畫布底下的TextMeshPro
 using UnityEngine.SceneManagement;//引用場景API
 namespace chia
 {
