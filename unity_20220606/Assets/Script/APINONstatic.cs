@@ -1,20 +1,20 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 namespace chia
 {
     /// <summary>
-    /// «DÀRºAAPI
-    /// »PÀRºA®t§O¦b©ó»İ­n¤@­Ó¹êÅéª«¥ó
-    /// ¹êÅéª«¥ó:¤@­Ó¦s¦b©ó³õ´º¤Wªº¹CÀ¸ª«¥ó Game Object
+    /// ééœæ…‹API
+    /// èˆ‡éœæ…‹å·®åˆ¥åœ¨æ–¼éœ€è¦ä¸€å€‹å¯¦é«”ç‰©ä»¶
+    /// å¯¦é«”ç‰©ä»¶:ä¸€å€‹å­˜åœ¨æ–¼å ´æ™¯ä¸Šçš„éŠæˆ²ç‰©ä»¶ Game Object
     /// </summary>
     public class APINONstatic : MonoBehaviour
     {
 
-        //«DÀRºAª«¥ó
-        //1.©w¸qÄæ¦ì¡A¸ê®ÆÃş¦æ¬°Ãş§O
-        //2.UnityÄİ©Ê­±ªO¥²¶·½T©w¸ÓÄæ¦ì¤£¬OªÅ­È(none)
-        //3.¨Ï¥Î«DÀRºAAPI
+        //ééœæ…‹ç‰©ä»¶
+        //1.å®šç¾©æ¬„ä½ï¼Œè³‡æ–™é¡è¡Œç‚ºé¡åˆ¥
+        //2.Unityå±¬æ€§é¢æ¿å¿…é ˆç¢ºå®šè©²æ¬„ä½ä¸æ˜¯ç©ºå€¼(none)
+        //3.ä½¿ç”¨ééœæ…‹API
         [SerializeField]
         private GameObject turtle;
         [SerializeField]
@@ -22,28 +22,28 @@ namespace chia
 
         private void Start()
         {
-            //«DÀRºAÄİ©Ê
-            //1.¨ú±o
-            //»yªk:
-            //Äæ¦ì¦WºÙ.«DÄİ©Ê¤èªk
-            print("§ÔªÌÀtªº±Ò°Êª¬ºA"+turtle.activeInHierarchy);
-            print("§ÔªÌÀtªº¹w³]¹Ï¼h" + turtle.layer);
-            print("°_ÂIªº®y¼Ğ" + StartPoint.position);
-            //2.³]©w
-            //»yªk:
-            //Äæ¦ì¦WºÙ.«DÀRºAÄİ©Ê «ü©w ­È
-            //turtle.activeInHierarchy=false;(¿ù»~¡A¦]¬°°ß¿WÄİ©Ê)
+            //ééœæ…‹å±¬æ€§
+            //1.å–å¾—
+            //èªæ³•:
+            //æ¬„ä½åç¨±.éå±¬æ€§æ–¹æ³•
+            print("å¿è€…é¾œçš„å•Ÿå‹•ç‹€æ…‹"+turtle.activeInHierarchy);
+            print("å¿è€…é¾œçš„é è¨­åœ–å±¤" + turtle.layer);
+            print("èµ·é»çš„åº§æ¨™" + StartPoint.position);
+            //2.è¨­å®š
+            //èªæ³•:
+            //æ¬„ä½åç¨±.ééœæ…‹å±¬æ€§ æŒ‡å®š å€¼
+            //turtle.activeInHierarchy=false;(éŒ¯èª¤ï¼Œå› ç‚ºå”¯ç¨å±¬æ€§)
             turtle.tag = "Player";
             turtle.layer = 4;
             //StartPoint.position = new Vector3(0, 5, 0);
-            //3.¨Ï¥Î «DÀRºA¤èªk
-            //»yªk:Äæ¦ì¦WºÙ.«DÀRºA¤èªk(¹ïÀ³ªº¤Ş¼Æ);
+            //3.ä½¿ç”¨ ééœæ…‹æ–¹æ³•
+            //èªæ³•:æ¬„ä½åç¨±.ééœæ…‹æ–¹æ³•(å°æ‡‰çš„å¼•æ•¸);
             turtle.SetActive(true);
         }
         private void Update()
         {
-            StartPoint.Translate(1.5f,0,0);//²¾°Ê
-            StartPoint.Rotate(0, 0, 3.5f);//±ÛÂà
+            StartPoint.Translate(1.5f,0,0);//ç§»å‹•
+            StartPoint.Rotate(0, 0, 3.5f);//æ—‹è½‰
         }
     }
 }

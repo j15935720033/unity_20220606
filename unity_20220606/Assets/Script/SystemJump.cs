@@ -21,11 +21,11 @@ namespace chia
         [SerializeField, Header("跳躍動畫參數")]
         private string nameJump = "開關跳躍";
         [SerializeField, Header("跳躍音效")]
-        private AudioClip soundJump;//音樂片段WAV
+        private AudioClip soundJump;//AudioClip:音樂片段WAV
 
         private Animator ani;
         private Rigidbody2D rig;
-        private AudioSource aud;//播音樂
+        private AudioSource aud;//AudioSource:播音樂
         //private GameObject tilemap;
 
 
