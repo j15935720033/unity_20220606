@@ -42,10 +42,11 @@ namespace chia
             rig = GetComponent<Rigidbody2D>();
             aud = GetComponent<AudioSource>();
             //tilemap = GameObject.Find("Tilemap");//取得tilemap
-            //layer = LayerMask.NameToLayer("地板");//取得MaskLayer "地板"
+            //layer = LayerMask.GetMask("地板");//取得MaskLayer "地板"
 
 
-            //tilemap.layer = LayerMask.NameToLayer("地板");
+
+            //tilemap.layer = LayerMask.GetMask("地板");
         }
         void Start()
         {
