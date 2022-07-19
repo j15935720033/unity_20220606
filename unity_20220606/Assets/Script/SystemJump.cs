@@ -27,7 +27,8 @@ namespace chia
         private Rigidbody2D rig;
         private AudioSource aud;//AudioSource:播音樂
         //private GameObject tilemap;
-
+        private GameObject tirtle ;//忍者龜
+        private Transform trans;
 
         private int layer;
         private bool clickJump;
@@ -43,10 +44,9 @@ namespace chia
             aud = GetComponent<AudioSource>();
             //tilemap = GameObject.Find("Tilemap");//取得tilemap
             //layer = LayerMask.GetMask("地板");//取得MaskLayer "地板"
-
-
-
             //tilemap.layer = LayerMask.GetMask("地板");
+            //tirtle = GameObject.Find("忍者龜");//忍者龜
+            trans = GameObject.Find("忍者龜").GetComponent<Transform>();
         }
         void Start()
         {
@@ -73,7 +73,11 @@ namespace chia
             Gizmos.color = colorCheckGround;
             //.2繪製圖示
             //transform.position 當前物件的座標
-            Gizmos.DrawCube(transform.position + v3VheckGroundoffset, v3VheckGroundSize);
+            //Gizmos.DrawCube(transform.position + v3VheckGroundoffset, v3VheckGroundSize);
+            //print($"trans.position={trans.transform}");
+            Gizmos.DrawCube(transform.position + v3VheckGroundoffset, v3VheckGroundSize);//transform每個gameObject都會有
+            //Gizmos.DrawCube(trans.position + v3VheckGroundoffset, v3VheckGroundSize);//OnDrawGizmos方法會在Awake前執行，所以抓不到trans
+
         }
         #endregion
         #region  功能
